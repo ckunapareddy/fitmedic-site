@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FitMedic — Premium Support Braces</title>
+<meta name="description" content="FitMedic makes premium, adjustable support braces for ankle and knee — designed for sport, recovery, and everyday wear. Shop on Amazon.">
+<style>
+  :root {
+    --bg: #f6f9fc;
+    --bg-alt: #eef3f9;
+    --card: #ffffff;
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --accent-green: #0f9d6e;
+    --accent-green-bg: #e7f6f0;
+    --accent-amber: #b45309;
+    --accent-amber-bg: #fdf2e3;
+    --text: #0f172a;
+    --text-dim: #5b6b82;
+    --text-faint: #8a97ab;
+    --border: #e3e9f1;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+  }
+  a { color: var(--primary); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  img { max-width: 100%; display: block; }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(246,249,252,0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+  }
+  .wordmark {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .wordmark .cross {
+    width: 22px;
+    height: 22px;
+    border-radius: 7px;
+    background: linear-gradient(135deg, var(--primary), #4f8cf7);
+    position: relative;
+    flex: 0 0 auto;
+  }
+  .wordmark .cross::before,
+  .wordmark .cross::after {
+    content: "";
+    position: absolute;
+    background: #fff;
+    border-radius: 2px;
+  }
+  .wordmark .cross::before { top: 5px; bottom: 5px; left: 9.5px; width: 3px; }
+  .wordmark .cross::after { left: 5px; right: 5px; top: 9.5px; height: 3px; }
+  nav.links { display: flex; gap: 28px; }
+  nav.links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+  nav.links a:hover { color: var(--text); }
+
+  /* Hero */
+  .hero {
+    padding: 72px 24px 48px;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: clamp(2.1rem, 5.5vw, 3.3rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0 0 18px;
+    color: var(--text);
+  }
+  .hero h1 span {
+    color: var(--primary);
+  }
+  .hero p {
+    max-width: 36rem;
+    margin: 0 auto 32px;
+    color: var(--text-dim);
+    font-size: clamp(1rem, 2vw, 1.12rem);
+  }
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--primary);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-size: 1rem;
+    box-shadow: 0 8px 20px -6px rgba(37,99,235,0.45);
+  }
+  .cta:hover { background: var(--primary-dark); }
+
+  /* Trust bar */
+  .trust-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 28px;
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+  }
+  .trust-bar .item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-dim);
+  }
+  .trust-bar .item .ico { font-size: 1rem; }
+
+  section { padding: 56px 24px; }
+  h2 {
+    font-size: 1.75rem;
+    margin: 0 0 8px;
+    text-align: center;
+    letter-spacing: -0.01em;
+  }
+  .section-sub {
+    text-align: center;
+    color: var(--text-dim);
+    max-width: 36rem;
+    margin: 0 auto 40px;
+  }
+
+  /* Products */
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  .product-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 1px 2px rgba(15,23,42,0.03);
+  }
+  .product-card.out-of-stock { opacity: 0.88; }
+  .card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  .tag.in-stock { color: var(--accent-green); background: var(--accent-green-bg); }
+  .tag.out-stock { color: var(--accent-amber); background: var(--accent-amber-bg); }
+  .price {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .product-card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  .product-card p.desc {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.93rem;
+    flex-grow: 1;
+  }
+  .buy-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    color: #fff;
+    background: var(--primary);
+    padding: 11px 18px;
+    border-radius: 10px;
+    font-size: 0.92rem;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .buy-link:hover { background: var(--primary-dark); }
+  .buy-link.secondary {
+    background: var(--bg-alt);
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+  }
+  .buy-link.secondary:hover { background: #e4eaf2; }
+  .stock-note {
+    font-size: 0.82rem;
+    color: var(--text-faint);
+    text-align: center;
+    margin-top: -2px;
+  }
+
+  /* Why section */
+  .why {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+  .why-item {
+    text-align: center;
+    padding: 24px 16px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+  }
+  .why-item .icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--accent-green-bg);
+    color: var(--accent-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin: 0 auto 14px;
+  }
+  .why-item h4 { margin: 0 0 6px; font-size: 1rem; }
+  .why-item p { margin: 0; color: var(--text-dim); font-size: 0.9rem; }
+
+  /* Contact */
+  .contact {
+    text-align: center;
+    background: var(--bg-alt);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .contact a.mail {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+  }
+  .contact a.mail:hover { text-decoration: underline; }
+
+  footer {
+    text-align: center;
+    padding: 32px 24px 40px;
+    color: var(--text-faint);
+    font-size: 0.85rem;
+  }
+  footer .foot-links { margin-top: 10px; }
+  footer .foot-links a { color: var(--text-faint); text-decoration: none; margin: 0 8px; }
+  footer .foot-links a:hover { color: var(--text-dim); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav wrap">
+    <a class="wordmark" href="#top"><span class="cross"></span>FITMEDIC</a>
+    <nav class="links">
+      <a href="#products">Products</a>
+      <a href="#why">Why FitMedic</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div id="top" class="hero wrap">
+  <h1>Support built<br>for <span>real recovery.</span></h1>
+  <p>FitMedic designs adjustable, premium support braces for ankle and knee — engineered for sport, recovery, and everyday wear. Sold and fulfilled through Amazon.</p>
+  <a class="cta" href="#products">Shop our products ↓</a>
+
+  <div class="trust-bar">
+    <span class="item"><span class="ico">🛡️</span>Fulfilled &amp; protected by Amazon</span>
+    <span class="item"><span class="ico">🎯</span>Adjustable, unisex fit</span>
+    <span class="item"><span class="ico">🩹</span>Designed for sport &amp; recovery</span>
+  </div>
+</div>
+
+<section id="products" class="wrap">
+  <h2>Our Products</h2>
+  <p class="section-sub">Two core products, engineered for comfortable, adjustable support.</p>
+  <div class="products">
+
+    <div class="product-card">
+      <div class="card-top">
+        <span class="tag in-stock">In Stock</span>
+        <span class="price">€19.90</span>
+      </div>
+      <h3>FitMedic Ankle Brace with Gel Pad</h3>
+      <p class="desc">Our professional, adjustable ankle bandage with integrated gel pads for extra cushioning and targeted support — unisex fit, flexible compression for sprains, Achilles support, and everyday stability.</p>
+      <a class="buy-link" href="https://www.amazon.de/-/en/FIT-MEDIC-Ankle-Support-Gel/dp/B0FNLD6CPV" target="_blank" rel="noopener">
+        Buy on Amazon.de
+      </a>
+    </div>
+
+    <div class="product-card out-of-stock">
+      <div class="card-top">
+        <span class="tag out-stock">Seasonal</span>
+        <span class="price">From €14.90</span>
+      </div>
+      <h3>FitMedic Knee Brace with Gel Pad</h3>
+      <p class="desc">A premium, supportive knee compression bandage with an integrated gel pad, built for stability and flexibility — ideal for sport and daily activity, and support for knee joint discomfort.</p>
+      <a class="buy-link secondary" href="https://www.amazon.de/FIT-MEDIC-Kniebandage-Meniskus-Bandage-Kniegelenkbeschwerden/dp/B0F3PDZ62V" target="_blank" rel="noopener">
+        View on Amazon.de
+      </a>
+      <p class="stock-note">Seasonal item — back in stock soon. Check the Amazon listing for updates.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="why" class="wrap">
+  <h2>Why FitMedic</h2>
+  <p class="section-sub">Designed for people who stay active and need support they can rely on.</p>
+  <div class="why">
+    <div class="why-item">
+      <div class="icon">🎯</div>
+      <h4>Adjustable Fit</h4>
+      <p>Flexible, unisex sizing designed to fit comfortably through daily movement and sport.</p>
+    </div>
+    <div class="why-item">
+      <div class="icon">🩹</div>
+      <h4>Built for Recovery</h4>
+      <p>Supportive compression designed with sprains, joint pain, and everyday stability in mind.</p>
+    </div>
+    <div class="why-item">
+      <div class="icon">⭐</div>
+      <h4>Trusted on Amazon</h4>
+      <p>Sold and fulfilled through Amazon, with Amazon's standard buyer protections.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="wrap contact">
+  <h2>Questions? We're here to help.</h2>
+  <p class="section-sub" style="margin-bottom:0;">For product support, order questions, or anything else, reach out any time.</p>
+  <a class="mail" href="mailto:support@fitmedic.com">support@fitmedic.com</a>
+</section>
+
+<footer>
+  <div>&copy; <span id="y"></span> FitMedic. All rights reserved.</div>
+  <div class="foot-links">
+    <a href="mailto:support@fitmedic.com">Support</a>
+    ·
+    <a href="#products">Products</a>
+  </div>
+</footer>
+
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
