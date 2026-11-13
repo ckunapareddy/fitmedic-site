@@ -20,16 +20,18 @@ h2{font-size:20px;margin:34px 0 8px}p,li{margin:0 0 10px}.muted{color:var(--fm-q
 .bottom a{color:var(--fm-quiet);text-decoration:none}a:focus-visible,button:focus-visible{outline:3px solid #e6a72d;outline-offset:3px}
 [lang-block]{display:none}html[lang=de] [lang-block=de],html[lang=en] [lang-block=en]{display:block}
 @media(max-width:650px){.logo{width:130px}.navr .home{display:none}}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;background:#152f43;color:#fff;padding:10px 16px;border-radius:5px;font:bold 14px Arial,sans-serif;text-decoration:none}.skip:focus{top:12px;outline:3px solid #e6a72d}
 </style>
 </head>
 <body data-title-de="Datenschutzerklärung | FIT MEDIC" data-title-en="Privacy policy | FIT MEDIC">
-<div class="top">FIT MEDIC · fitmedic.com</div>
-<header class="nav">
+<a class="skip" href="#main" lang="de">Zum Inhalt springen</a>
+<header><div class="top">FIT MEDIC · fitmedic.com</div>
+<div class="nav">
   <a href="/" aria-label="FIT MEDIC"><img class="logo" src="/logo.jpg" alt="FITMEDIC"></a>
   <div class="navr"><a class="home" href="/" data-de="Zur Startseite" data-en="Home">Zur Startseite</a>
-  <button class="lang" id="lang" type="button" aria-label="Switch to English">EN</button></div>
-</header>
-<main>
+  <button class="lang" id="lang" type="button" aria-label="EN – Switch to English">EN</button></div>
+</div></header>
+<main id="main">
 <div lang-block="de" lang="de"><h1>Datenschutzerklärung</h1><p class="muted">Informationen nach Art. 13 DSGVO</p>
 <h2>1. Verantwortlicher</h2><div class="card"><p>FitMedic LLC<br>2102 Business Center Drive, Suite 130<br>Irvine, CA 92612<br>USA<br>E-Mail: <a href="mailto:support@fitmedic.com">support@fitmedic.com</a> · Telefon: +1 (949) 308-1229</p></div>
 <h2>2. Kurz gesagt</h2>
@@ -65,13 +67,13 @@ h2{font-size:20px;margin:34px 0 8px}p,li{margin:0 0 10px}.muted{color:var(--fm-q
 <p>You are not obliged to provide personal data. Without the technically necessary connection data, however, the website cannot be displayed. No automated decision-making or profiling takes place.</p>
 <p class="muted">Last updated: 13 November 2026</p><p class="muted">The German version is legally binding.</p></div>
 </main>
-<div class="bottom"><span>© 2026 FitMedic LLC</span><a href="/impressum/" data-de="Impressum" data-en="Legal notice">Impressum</a><a href="/datenschutz/" data-de="Datenschutz" data-en="Privacy">Datenschutz</a><a href="/anleitung/" data-de="Anleitung (Video)" data-en="How to wear (video)">Anleitung (Video)</a><a href="/">fitmedic.com</a></div>
+<footer class="bottom"><span>© 2026 FitMedic LLC</span><a href="/impressum/" data-de="Impressum" data-en="Legal notice">Impressum</a><a href="/datenschutz/" data-de="Datenschutz" data-en="Privacy">Datenschutz</a><a href="/anleitung/" data-de="Anleitung (Video)" data-en="How to wear (video)">Anleitung (Video)</a><a href="/">fitmedic.com</a></footer>
 <script>
 (()=>{const b=document.getElementById('lang');let l='de';
 try{const q=new URLSearchParams(location.search).get('lang');if(q==='en'||q==='de')l=q;}catch(e){}
 function a(n){l=n;document.documentElement.lang=l;
 document.querySelectorAll('[data-de]').forEach(e=>{e.textContent=e.dataset[l];});
-b.textContent=l==='de'?'EN':'DE';b.setAttribute('aria-label',l==='de'?'Switch to English':'Auf Deutsch umschalten');
+b.textContent=l==='de'?'EN':'DE';b.setAttribute('aria-label',l==='de'?'EN – Switch to English':'DE – Auf Deutsch umschalten');
 document.title=document.body.dataset['title'+(l==='de'?'De':'En')];}
 b.addEventListener('click',()=>a(l==='de'?'en':'de'));a(l);})();
 </script>
